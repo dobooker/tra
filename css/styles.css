@@ -24,13 +24,13 @@ img{
     width: 100%;
 }
 .logoImg{
-    height: 60px;
-    width: 60px;
+    height: 100px;
+    width: 100px;
 }
 
 header{
-    border: 2px solid grey;
-    background-color: lightskyblue;
+    border-bottom: 2px solid grey;
+    /* background-color: lightskyblue; */
     padding-top: 20px;
 }
    
