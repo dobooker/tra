@@ -20,14 +20,41 @@ ul {
 }
 
 .musicImg {
-  flex-basis: 600px;
+  position: relative;
+  flex-basis: 400px;
   border-radius: 1rem;
+  margin: 2px 3px;
   overflow: hidden;
+  transition: transform 0.1s ease-in;
+}
+.musicImg .playButton {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.63);
+  transition: opacity 0.2s ease;
+}
+.musicImg .playButton img {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+}
+.musicImg:hover {
+  transform: translateY(-2px);
+}
+.musicImg:hover .playButton {
+  opacity: 1;
 }
 
 img {
-  height: 500px;
+  height: 400px;
   width: 100%;
+  transform: scale(1.1);
 }
 
 .logoImg {
