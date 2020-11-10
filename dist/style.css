@@ -22,7 +22,6 @@ ul {
 .musicImg {
   position: relative;
   flex-basis: 400px;
-  border-radius: 1rem;
   margin: 2px 3px;
   overflow: hidden;
   transition: transform 0.1s ease-in;
@@ -63,7 +62,6 @@ img {
 }
 
 header {
-  border-bottom: 2px solid grey;
   padding-top: 20px;
 }
 
