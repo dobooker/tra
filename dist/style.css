@@ -24,7 +24,7 @@ ul {
   flex-basis: 400px;
   margin: 2px 3px;
   overflow: hidden;
-  transition: transform 0.1s ease-in;
+  transition: transform 0.1s ease-in, border-radius 0.5s 0.5s ease-in;
 }
 .musicImg .playButton {
   top: 0;
@@ -35,6 +35,7 @@ ul {
   width: 100%;
   background-color: rgba(128, 128, 128, 0.63);
   transition: opacity 0.2s ease;
+  z-index: 2;
 }
 .musicImg .playButton img {
   position: absolute;
@@ -50,6 +51,40 @@ ul {
   opacity: 1;
 }
 
+.hovered .playButton {
+  opacity: 1;
+}
+
+.musicplay {
+  animation: play 25s infinite linear;
+}
+
+.shrink {
+  transition: border-radius 0.3s ease-out;
+  border-radius: 100%;
+  position: relative;
+}
+
+.musicstop {
+  animation: stop 0.5s ease-in 1 forwards;
+}
+
+@keyframes play {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes stop {
+  to {
+    transform: rotate(0deg);
+  }
+}
 img {
   height: 400px;
   width: 100%;
