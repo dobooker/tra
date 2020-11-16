@@ -8,6 +8,7 @@ musics.forEach(element => {
             
             isPlaying.classList.toggle("shrink");
             isPlaying.classList.toggle("hovered");
+            isPlaying.classList.toggle("isplaying");
             
             isPlaying.childNodes.forEach(nott=>{
                 changeOverlay(nott, isPlaying);
@@ -17,19 +18,21 @@ musics.forEach(element => {
             isPlaying = false ;                    
         }
 
-        console.log(isPlaying);
-
         
-        if(!element.classList.contains("isplaying")){
-            isPlaying = false;
-        }
         
+        
+        console.log(element.classList);
         element.classList.toggle("shrink");
         element.classList.toggle("isplaying");
         element.classList.toggle("hovered");
+        if(element.classList.contains("isplaying")){
+            isPlaying = element;                  
+        }else if(!element.classList.contains("isplaying")){
+            isPlaying = false;
+        }
         element.childNodes.forEach(t => {
             
-      
+            
             rotatation(t, element);
        
             changeOverlay(t, element);
@@ -61,10 +64,7 @@ const changeOverlay = (t, elem)=>{
     if(t.className == "playButton"){   
         t.childNodes.forEach(img =>{
             if(img.nodeName == "IMG"){
-                // console.log("sfdsdafsfd")
-                // console.log(elem)
                 if(elem.classList.contains("shrink")){
-                    console.log("has")
                     img.src = "images/pause.png";
                 }
                 else{
@@ -100,8 +100,7 @@ const rotatation = (t, elem)=>{
         }
         else{
             t.classList.remove("musicstop");
-            t.classList.add("musicplay");
-            isPlaying = elem;                   
+            t.classList.add("musicplay");                  
         }   
     }
 }
