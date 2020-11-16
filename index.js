@@ -54,7 +54,8 @@ const playMusic = (t)=>{
             
         }
         else{
-            t.classList.add("playing")
+            t.classList.add("playing");
+            t.currentTime = 0;
             t.play()
         }
     }

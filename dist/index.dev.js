@@ -46,6 +46,7 @@ var playMusic = function playMusic(t) {
       t.classList.remove("playing");
     } else {
       t.classList.add("playing");
+      t.currentTime = 0;
       t.play();
     }
   }
