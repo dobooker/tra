@@ -6,6 +6,9 @@ musics.forEach(function (element) {
     element.classList.toggle("shrink");
     element.classList.toggle("hovered");
     element.childNodes.forEach(function (t) {
+      // animations rotatation
+      // animations rotatation
+      // animations rotatation
       if (t.nodeName == "IMG") {
         if (t.classList.contains("musicplay")) {
           var transformation = window.getComputedStyle(t).getPropertyValue('transform').match(/(-?[0-9\.]+)/g);
@@ -34,7 +37,10 @@ musics.forEach(function (element) {
           t.classList.remove("musicstop");
           t.classList.add("musicplay");
         }
-      }
+      } // play button
+      // play button
+      // play button
+
 
       if (t.className == "playButton") {
         t.childNodes.forEach(function (img) {
@@ -47,6 +53,15 @@ musics.forEach(function (element) {
             }
           }
         });
+      }
+
+      if (t.nodeName == "AUDIO") {
+        if (t.classList.contains("playing")) {
+          t.pause();
+        } else {
+          t.classList.add("playing");
+          t.play();
+        }
       }
     });
   });

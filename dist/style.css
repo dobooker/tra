@@ -67,7 +67,7 @@ ul {
 }
 
 .musicstop {
-  animation: stop 0.5s ease-in 1 forwards;
+  animation: stop 0.3s ease-in-out 1 forwards;
 }
 
 @keyframes play {
